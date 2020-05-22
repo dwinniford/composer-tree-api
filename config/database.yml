@@ -85,6 +85,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: song_web_production
-  password:
-  host: localhost
+  database: song-web_production
+  username: song-web
+  password: <%= ENV['SONG-WEB_DATABASE_PASSWORD']
