@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+
  
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -28,7 +28,7 @@ development:
   username: postgres
   password: postgres 
   database: composer_tree_api_development
-
+  host: localhost
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -84,7 +84,7 @@ test:
 #
 production:
   <<: *default
-  database: composer_tree_api_production
+  database: song_web_production
   url: <%= ENV['DATABASE_URL'] %>
-  username: composer_tree_api
-  password: <%= ENV['COMPOSER_TREE_API_DATABASE_PASSWORD'] %>
+  username: song_web
+  password: <%= ENV['SONG_WEB_DATABASE_PASSWORD'] %>
