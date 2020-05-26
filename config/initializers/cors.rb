@@ -8,7 +8,8 @@ Rails.application.config.action_controller.forgery_protection_origin_check = fal
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins Rails.application.credentials.dig(Rails.env.to_sym, :allowed_origins)
+    origins 'localhost:8080'
+    # origins Rails.application.credentials.dig(Rails.env.to_sym, :allowed_origins)
     #  needs specific url to not be dangerous
 
     resource '*',
