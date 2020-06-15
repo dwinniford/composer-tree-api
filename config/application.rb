@@ -39,6 +39,6 @@ module ComposerTreeApi
     # config.session_store :cookie_store, key: '_interslice_session' # this is in the initializers/session_store.rb
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.session_store :cookie_store, same_site: :none, secure: true 
+    # config.session_store :cookie_store, same_site: :none, secure: true 
   end 
 end
