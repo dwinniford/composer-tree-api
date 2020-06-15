@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
 
     def cookie 
         "ok"
-        response.headers['Set-Cookie'] = 'SameSite=None;Secure'
+        response.headers['Set-Cookie'] = 'SameSite=None; Secure'
     end
 
     private 
