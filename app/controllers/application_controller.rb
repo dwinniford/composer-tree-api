@@ -16,7 +16,11 @@ class ApplicationController < ActionController::API
     private 
     def set_csrf_cookie
         # cookies["CSRF-TOKEN"] = form_authenticity_token
-        response.headers['Set-Cookie'] = "CSRF-TOKEN=#{form_authenticity_token}; SameSite=None; Secure"
-       
+        # response.headers['Set-Cookie'] = "CSRF-TOKEN=#{form_authenticity_token}; SameSite=None; Secure"
+       cookies["CSRF-TOKEN"] = {
+           value: form_authenticity_token,
+           SameSite: 'None',
+           Secure: true
+       }
     end
 end
