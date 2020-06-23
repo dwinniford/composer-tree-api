@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
     def cookie 
         "ok"
         # response.headers['Set-Cookie'] = 'SameSite=None; Secure'
-        pp response.headers 
+        # pp response.headers 
         # A cookie associated with a resource at http://song-web.herokuapp.com/ was set with `SameSite=None` but without `Secure`.
         # looks like this: "Set-Cookie"=>"SameSite=None;Secure"
     end
