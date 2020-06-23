@@ -7,20 +7,10 @@ class ApplicationController < ActionController::API
 
     def cookie 
         "ok"
-        # response.headers['Set-Cookie'] = 'SameSite=None; Secure'
-        # pp response.headers 
-        # A cookie associated with a resource at http://song-web.herokuapp.com/ was set with `SameSite=None` but without `Secure`.
-        # looks like this: "Set-Cookie"=>"SameSite=None;Secure"
     end
 
     private 
     def set_csrf_cookie
         cookies["CSRF-TOKEN"] = form_authenticity_token
-        # response.headers['Set-Cookie'] = "CSRF-TOKEN=#{form_authenticity_token}; SameSite=None; Secure"
-    #    cookies["CSRF-TOKEN"] = {
-    #        value: form_authenticity_token,
-    #        SameSite: 'None',
-    #        Secure: true
-    #    }
     end
 end
