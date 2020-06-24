@@ -11,6 +11,12 @@ class ApplicationController < ActionController::API
 
     private 
     def set_csrf_cookie
-        cookies["CSRF-TOKEN"] = form_authenticity_token
+        # cookies["CSRF-TOKEN"] = form_authenticity_token
+        # binding.pry 
+        # set domain dynamically by env?
+        cookies["CSRF-TOKEN"] = {
+            value: form_authenticity_token,
+            domain: 'songweb.app'
+        }
     end
 end
