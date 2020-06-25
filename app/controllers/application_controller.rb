@@ -14,9 +14,14 @@ class ApplicationController < ActionController::API
         # cookies["CSRF-TOKEN"] = form_authenticity_token
         # binding.pry 
         # set domain dynamically by env?
+        # if Rails.env == "production"
+        #     domain = "songweb.app"
+        # elsif Rails.env == "development"
+        #     domain = "localhost"
+        # end
         cookies["CSRF-TOKEN"] = {
             value: form_authenticity_token,
-            domain: Rails.application.credentials.dig(Rails.env.to_sym, :allowed_origins)
+            domain: :all 
         }
     end
 end
